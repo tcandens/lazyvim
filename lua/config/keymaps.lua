@@ -6,3 +6,12 @@ local map = LazyVim.safe_keymap_set
 map("n", "<leader>x", function()
   Snacks.bufdelete()
 end, { desc = "Close Buffer" })
+
+map("n", "<c-\\>", function()
+  Snacks.terminal()
+end, { desc = "Terminal (cwd)" })
+map("t", "<c-\\>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+
+map("n", "<leader>fw", function()
+  Snacks.picker.grep()
+end, { desc = "Grep" })

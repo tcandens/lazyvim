@@ -3,6 +3,7 @@ return {
     "catppuccin/nvim",
     lazy = false,
     name = "catppuccin",
+    flavour = "mocha",
     opts = {
       integrations = {
         aerial = true,
@@ -53,6 +54,12 @@ return {
           end
         end,
       },
+    },
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "catppuccin",
     },
   },
 }
