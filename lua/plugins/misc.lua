@@ -4,6 +4,15 @@
 
 return {
   {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      window = {
+        position = "right",
+      },
+    },
+  },
+  { "sindrets/diffview.nvim" },
+  {
     "hrsh7th/nvim-cmp",
     dependencies = { "hrsh7th/cmp-emoji" },
     opts = function(_, opts)
@@ -22,6 +31,17 @@ return {
       keymap = {
         ["<C-k>"] = { "select_next", "fallback" },
         ["<C-j>"] = { "select_prev", "fallback" },
+      },
+    },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    ---@class PluginLspOpts
+    opts = {
+      ---@type lspconfig.options
+      servers = {
+        -- pyright will be automatically installed with mason and loaded with lspconfig
+        gleam = {},
       },
     },
   },
