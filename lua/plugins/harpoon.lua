@@ -28,17 +28,6 @@ return {
       },
     }
 
-    for i = 1, 5 do
-      local char = string.char(96 + 1)
-      table.insert(keys, {
-        "<leader>" .. char,
-        function()
-          require("harpoon"):list():select(i)
-        end,
-        desc = "Harpoon to File " .. char,
-      })
-    end
-
     return keys
   end,
 }

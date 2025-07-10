@@ -15,3 +15,8 @@ map("t", "<c-\\>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 map("n", "<leader>fw", function()
   Snacks.picker.grep()
 end, { desc = "Grep" })
+
+map("n", "<leader>cc", function()
+  local cc = require("codecompanion")
+  cc.toggle()
+end, { desc = "CodeCompanion Chat" })
