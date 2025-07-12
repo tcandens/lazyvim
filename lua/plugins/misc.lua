@@ -9,6 +9,10 @@ return {
     opts = {
       window = {
         position = "right",
+        mappings = {
+          ["o"] = "open_with_window_picker",
+          ["<2-LeftMouse>"] = "open_with_window_picker",
+        },
       },
     },
   },
@@ -18,7 +22,12 @@ return {
     event = "VeryLazy",
     version = "2.*",
     config = function()
-      require("window-picker").setup()
+      require("window-picker").setup({
+        hint = "floating-big-letter",
+        picker_config = {
+          handle_mouse_click = true,
+        },
+      })
     end,
   },
   { "sindrets/diffview.nvim" },
