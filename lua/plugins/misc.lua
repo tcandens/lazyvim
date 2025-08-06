@@ -1,7 +1,3 @@
--- if true then
---   return {}
--- end
-
 return {
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -12,6 +8,10 @@ return {
         mappings = {
           ["o"] = "open_with_window_picker",
           ["<2-LeftMouse>"] = "open_with_window_picker",
+          ["cc"] = function()
+            local cc = require("codecompanion")
+            cc.toggle()
+          end,
         },
       },
     },

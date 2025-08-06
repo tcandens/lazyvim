@@ -1,3 +1,7 @@
+if true then
+  return {}
+end
+
 return {
   {
     "neovim/nvim-lspconfig",
@@ -6,10 +10,9 @@ return {
       servers = {
         denols = {
           on_attach = require("lazyvim.util").lsp.on_attach,
-          root_dir = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc"),
         },
-        vtsls = {
-          root_dir = require("lspconfig").util.root_pattern("package.json"),
+        ts_ls = {
+          on_attach = require("lazyvim.util").lsp.on_attach,
         },
       },
     },

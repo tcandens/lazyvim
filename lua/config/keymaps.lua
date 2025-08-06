@@ -16,7 +16,7 @@ map("n", "<leader>fw", function()
   Snacks.picker.grep()
 end, { desc = "Grep" })
 
-map("n", "<leader>cc", function()
+map("n", "cc", function()
   local cc = require("codecompanion")
   cc.toggle()
 end, { desc = "CodeCompanion Chat" })

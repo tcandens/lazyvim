@@ -28,6 +28,7 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
       "j-hui/fidget.nvim",
+      "ravitemer/mcphub.nvim",
     },
     init = function()
       require("plugins.codecompanion.fidget-spinner"):init()
@@ -35,8 +36,9 @@ return {
   },
   {
     "ravitemer/mcphub.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
     build = "npm install -g mcp-hub@latest",
-    cconfig = function()
+    config = function()
       require("mcphub").setup()
     end,
   },
